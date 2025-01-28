@@ -211,11 +211,10 @@ class Main:
         print(self.t)
         print(f'''
         {Fore.WHITE}[{Fore.LIGHTMAGENTA_EX}1{Fore.WHITE}] Fortnite via Xbox {Fore.WHITE}[{Fore.LIGHTMAGENTA_EX}Full Capture using Microsoft authentication{Fore.WHITE}]
-        {Fore.WHITE}[{Fore.LIGHTMAGENTA_EX}7{Fore.WHITE}] Exit
     ''')
         mode = input(f'{Fore.LIGHTMAGENTA_EX}                > ')
 
-        if mode == "1" or mode == "2":
+        if mode == "1":
             if mode == "2":
                 Counter.brute = True
                 self.cuimode = 'y'
