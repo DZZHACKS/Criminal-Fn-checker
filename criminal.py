@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import re
 import colorama
 import concurrent.futures
@@ -26,8 +27,6 @@ import urllib3
 import urllib
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-
-
 init()
 default_values = '''checker:
   print_fail: false
@@ -36,7 +35,7 @@ default_values = '''checker:
   timeout: 6000
   threads: 1000
   save_bad: false
-  display_mode: bolt
+  display_mode: criminal
   import_from_file: false
   webhook:
     Webhook: true
@@ -65,7 +64,6 @@ while True:
         sleep(1.5)
         system('cls')
 
-
 class banchecker:
     unbanned = 0
     nfa = 0
@@ -74,8 +72,6 @@ class banchecker:
     banned = 0
     checked = 0
     bad = 0
-
-
 
 class Counter:
     sellerstuff = []
@@ -110,7 +106,6 @@ class Counter:
     goodlines = 0
     badlines = 0
 
-
 class Main:
     def __init__(self):
         from time import time
@@ -121,7 +116,7 @@ class Main:
         self.created = str(strftime('-[%m-%d-%Y %H-%M-%S]'))
         self.domain_list = self.lisr()
         disable_warnings()
-        self.version = '1.35'
+        self.version = 'Free'
         self.printing = Queue()
         self.caputer = Queue()
         self.start_time = 0
@@ -136,19 +131,19 @@ class Main:
         windll.kernel32.SetConsoleTitleW(
             f'criminal | Main menu')
         from colorama import Fore
-       
-        gradient_colors = [
-    Fore.LIGHTMAGENTA_EX,               # Magenta pur
-    Fore.LIGHTMAGENTA_EX,       # Magenta clair
-    Fore.LIGHTMAGENTA_EX,         # Magenta + intensité (hypothétique, non supportée directement)
-    Fore.LIGHTMAGENTA_EX,         # Magenta + intensité (hypothétique, non supportée directement)
-    Fore.LIGHTMAGENTA_EX,         # Magenta + intensité (hypothétique, non supportée directement)
-    Fore.LIGHTMAGENTA_EX, # Magenta clair + intensité
-    Fore.LIGHTMAGENTA_EX, # Magenta clair + intensité
-    Fore.LIGHTMAGENTA_EX  # Magenta clair + intensité
-]
 
-# Exemple de texte avec un dégradé de nuances de Magenta
+        gradient_colors = [
+            Fore.LIGHTMAGENTA_EX,               # Magenta pur
+            Fore.LIGHTMAGENTA_EX,       # Magenta clair
+            Fore.LIGHTMAGENTA_EX,         # Magenta + intensité (hypothétique, non supportée directement)
+            Fore.LIGHTMAGENTA_EX,         # Magenta + intensité (hypothétique, non supportée directement)
+            Fore.LIGHTMAGENTA_EX,         # Magenta + intensité (hypothétique, non supportée directement)
+            Fore.LIGHTMAGENTA_EX, # Magenta clair + intensité
+            Fore.LIGHTMAGENTA_EX, # Magenta clair + intensité
+            Fore.LIGHTMAGENTA_EX  # Magenta clair + intensité
+        ]
+
+        # Exemple de texte avec un dégradé de nuances de Magenta
         self.t = f'''
                         {gradient_colors[0]} ▄████▄  {gradient_colors[1]}   ██▀███ {gradient_colors[2]}    ██▓ {gradient_colors[3]}   ███▄ ▄███▓ {gradient_colors[4]}  ██▓ {gradient_colors[5]} ███▄     █ {gradient_colors[6]}   ▄▄▄      {gradient_colors[7]}   ██▓    
                         {gradient_colors[0]}▒██▀ ▀█  {gradient_colors[1]}  ▓██ ▒ ██ {gradient_colors[2]} ▒▓██▒▓ {gradient_colors[3]}  ██▒▀█▀ ██▒{gradient_colors[4]}  ▓██▒ {gradient_colors[5]}  ██ ▀█   █ {gradient_colors[6]}  ▒████▄    {gradient_colors[7]}  ▓██▒    
@@ -159,11 +154,9 @@ class Main:
                         {gradient_colors[0]}  ░  ▒     {gradient_colors[1]}  ░▒ ░ ▒{gradient_colors[2]}  ░ ▒ ░░ {gradient_colors[3]}    ░      ░{gradient_colors[4]}  ▒ ░░ {gradient_colors[5]}  ░░   ░ ▒░ {gradient_colors[6]}   ▒   ▒▒ ░░{gradient_colors[7]}   ░ ▒  ░
                         {gradient_colors[0]}░          {gradient_colors[1]}  ░░   ░ {gradient_colors[2]}   ▒ ░░{gradient_colors[3]}       ░    {gradient_colors[4]}  ▒ ░  {gradient_colors[5]}  ░   ░ ░   {gradient_colors[6]}  ░   ▒     {gradient_colors[7]}  ░ ░   
                         {gradient_colors[0]}░ ░        {gradient_colors[1]}   ░    {gradient_colors[2]}    ░   {gradient_colors[3]}        ░   {gradient_colors[4]}   ░   {gradient_colors[5]}          ░ {gradient_colors[6]}        ░  ░{gradient_colors[7]}      ░  ░
-                        {gradient_colors[0]}░                                                                 
+                        {gradient_colors[0]}░   
 '''
 
-
-        
         def versionchecker():
             import os
             import re
@@ -203,7 +196,7 @@ class Main:
             print_slowly(f'Downloading version {ver}', 0.01)
             while True:
                 try:
-                    r = requests.get('https://raw.githubusercontent.com/Shaggymop/BoltFN/main/criminal.py', timeout=10)
+                    r = requests.get('https://raw.githubusercontent.com/DZZHACKS/Criminal-Fn-checker/refs/heads/main/criminal.py?token=GHSAT0AAAAAAC6ABKCCLNXV4JL5Y64NANZMZ4YNBMQ', timeout=10)
                     with open(f'criminal{ver}.py', 'w', encoding='utf8') as file:
                         file.write(r.text)
                     break
@@ -217,267 +210,63 @@ class Main:
                 f'criminal | v.free | t.me/CHEZCRIMINALL')
         print(self.t)
         print(f'''
-                                {Fore.WHITE}[{Fore.LIGHTMAGENTA_EX}1{Fore.WHITE}] Fortnite via Xbox {Fore.WHITE}[{Fore.LIGHTMAGENTA_EX}Full Capture using Microsoft authentication{Fore.WHITE}]
-                                {Fore.WHITE}[{Fore.LIGHTMAGENTA_EX}7{Fore.WHITE}] Exit
-''')
+        {Fore.WHITE}[{Fore.LIGHTMAGENTA_EX}1{Fore.WHITE}] Fortnite via Xbox {Fore.WHITE}[{Fore.LIGHTMAGENTA_EX}Full Capture using Microsoft authentication{Fore.WHITE}]
+        {Fore.WHITE}[{Fore.LIGHTMAGENTA_EX}7{Fore.WHITE}] Exit
+    ''')
         mode = input(f'{Fore.LIGHTMAGENTA_EX}                > ')
 
-
-        if mode == "5":
-            system('cls')
-            print(self.t)
-            windll.kernel32.SetConsoleTitleW(
-                f'criminal V{self.version} | Module: ComboEditor')
-            print(f'''
-{Fore.GREEN}|{Fore.WHITE}OPTIONS:
-
-[{Fore.GREEN}1{Fore.WHITE}] Minecraft edits
-[{Fore.GREEN}2{Fore.WHITE}] General edits
-[{Fore.GREEN}3{Fore.WHITE}] Domain Sorter
-[{Fore.GREEN}4{Fore.WHITE}] Domain Randomizer
-[{Fore.GREEN}5{Fore.WHITE}] Domain Remover (Email:Pass - User:Pass)
-[{Fore.GREEN}6{Fore.WHITE}] File Splitter
-[{Fore.GREEN}7{Fore.WHITE}] Text Merger
-[{Fore.GREEN}8{Fore.WHITE}] Username Extrator
-[{Fore.GREEN}9{Fore.WHITE}] Email Extrator
-[{Fore.GREEN}10{Fore.WHITE}] Combo Extractor
-[{Fore.GREEN}11{Fore.WHITE}] Duplicate Remover
-[{Fore.GREEN}12{Fore.WHITE}] Combo filter (remove bad lines)
-[{Fore.GREEN}13{Fore.WHITE}] Domain changer
-[{Fore.GREEN}14{Fore.WHITE}] Splitter
-[{Fore.RED}15{Fore.WHITE}] BACK
-''')
-            while True:
-                option = str(input(f'{Fore.YELLOW} > '))
-                if option in ("1", "2", "3", "4", "5", "6", "8", "9", "10", "11", "12", "13", "14"):
-                    while True:
-                        Result = ('Results')
-                        if not path.exists(Result):
-                            mkdir(Result)
-                        self.result = ("Results/Domain")
-                        self.file = input(
-                            f'{Fore.CYAN}[ComboEditor] Combo file:')
-                        if not path.exists(self.file):
-                            print(Fore.RED + "[ERROR] Not a valid file")
-                            sleep(0.8)
-                            continue
-                        else:
-                            with open(self.file, 'r+', encoding='latin-1') as self.lines:
-                                self.get_option(option)
-
-                elif option == "7":
-                    while True:
-                        self.result = f'results{self.unix}.txt'
-                        self.folder = input(
-                            '\nFolder name (Make sure folder is in the same folder as the program) :\n< ')
-                        try:
-                            with open(f'{self.result}', 'a', encoding='latin-1') as self.infile:
-                                self.get()
-                        except FileNotFoundError:
-                            print("Folder not found.")
-                            continue
-                elif option == "15":
-                    system('cls')
-                    Main()
-                else:
-                    print(
-                        f"{Fore.CYAN}\nPlease enter a valid number\n{Fore.YELLOW}")
-                    sleep(1)
-                    continue
-        elif mode == "6":
-            system('cls')
-            print(self.t)
-            if not path.exists('Scraped.txt'):
-                file = open("Scraped.txt", "w")
-                file.write("")
-                file.close()
-            if not path.exists('Urls.txt'):
-                file = open("Urls.txt", "w")
-                file.write("")
-                file.close()
-            print(
-                f'{Fore.CYAN}Press ENTER to start scraping (make sure your urls are in urls.txt)')
-            input('')
-            urls = []
-            proxies = []
-            scrapedproxies = []
-            tim = int(input('Timeout: '))
-            urlss = open('urls.txt', 'r', encoding='u8',
-                         errors='ignore').read().split('\n')
-            improvedurls = [x for x in urlss if x != '' and 'http' in x]
-            for line in improvedurls:
-                urls.append(line)
-            while True:
-                currentnumber = open(
-                    'Scraped.txt', 'r', encoding='u8', errors='ignore').read().split('\n')
-                beforescrape = (len(scrapedproxies))
-                for url in urls:
-                    try:
-                        r = requests.get(url, timeout=tim)
-                    except:
-                        print(f'{Fore.RED}[-] Couldn\'t connect {url}')
-                        urls.remove(url)
-                        continue
-                lol = r.text.split('\n')
-                urls.remove(url)
-                for line in lol:
-                    proxies.append(line)
-                    scrapedproxies = [
-                        x for x in proxies if x != '' and ':' in x and 'a' not in x and 'b' not in x and 'c' not in x and 'd' not in x and 'e' not in x and 'f' not in x and 'g' not in x and 'h' not in x and 't' not in x]
-                    scraped = len(scrapedproxies) - beforescrape
-                print(f'{Fore.GREEN}[+] Scraped {scraped} Proxies from {url}')
-                for proxy in scrapedproxies:
-                    open(f'Scraped.txt', 'a', encoding='u8').write(
-                        f'{proxy}\n')
-                if len(urls) > 0:
-                    continue
-                else:
-                    print('Done scraping')
-                    break
-            input('Press ENTER to get back to the menu\n')
-            system('cls')
-            Main()
-
-        elif mode == "4":
-            system('cls')
-            print(self.t)
-            urls = [
-                'https://api.proxyscrape.com/?request=getproxies&proxytype=socks4&timeout=10000&country=all']
-            urls.append(
-                'https://api.proxyscrape.com/?request=getproxies&proxytype=http&timeout=10000&country=all')
-            urls.append(
-                'https://api.proxyscrape.com/?request=getproxies&proxytype=socks5&timeout=10000&country=all')
-            urls.append(
-                'https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/socks4.txt')
-            urls.append(
-                'https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/http.txt')
-            urls.append(
-                'https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/socks5.txt')
-            urls.append(
-                'https://raw.githubusercontent.com/hookzof/socks5_list/master/proxy.txt')
-            urls.append(
-                'https://raw.githubusercontent.com/ShiftyTR/Proxy-List/master/socks4.txt')
-            urls.append(
-                'https://raw.githubusercontent.com/ShiftyTR/Proxy-List/master/socks5.txt')
-            urls.append(
-                'https://raw.githubusercontent.com/ShiftyTR/Proxy-List/master/http.txt')
-            urls.append(
-                'https://raw.githubusercontent.com/ShiftyTR/Proxy-List/master/https.txt')
-            urls.append('https://multiproxy.org/txt_all/proxy.txt')
-            urls.append('http://rootjazz.com/proxies/proxies.txt')
-            urls.append('http://ab57.ru/downloads/proxyold.txt')
-            downloadfilename2 = input('File to save proxies eg proxies.txt:')
-            windll.kernel32.SetConsoleTitleW(
-                f'criminal | v{self.version} | Scraping Proxies | BoltProxy')
-            print(f'{Fore.CYAN}Press ENTER to start scraping')
-            input('')
-            proxies = []
-            scrapedproxies = []
-            done = []
-            while True:
-                for url in urls:
-                    try:
-                        r = requests.get(url, timeout=20)
-                    except Exception as error:
-                        print(error)
-                        continue
-                lol = r.text.split('\n')
-                urls.remove(url)
-                for line in lol:
-                    proxies.append(line)
-                scraped = len(proxies)
-                print(f'{Fore.GREEN}[+] Scraped {scraped} Proxies')
-                for proxy in proxies:
-                    if proxy.count(':') == 1:
-                        if len(proxy) < 30:
-                            done.append(proxy + '\n')
-                if len(urls) > 0:
-                    continue
-                else:
-                    print(f'{Fore.CYAN}Done scraping\n')
-                    break
-            windll.kernel32.SetConsoleTitleW(
-                f'criminal | v{self.version} | Done Scraping | BoltProxy')
-            print(f'Proxies scraped: {len(done)}')
-            print(f'Removing duplicates...')
-            output_file: str = f'{downloadfilename2}'
-            open(output_file, 'w', encoding='latin-1').writelines(
-                set(done))
-            afterremove = open(output_file, 'r', encoding='u8',
-                               errors='ignore').read().split('\n')
-            beforeremove = len(done)
-            removed = beforeremove - len(afterremove)
-            print(f'{Fore.CYAN}Done\n')
-            input('Press ENTER to get back to the menu')
-            system('cls')
-            Main()
-        elif mode == "3":
-            system('cls')
-            print(self.t)
-            print("")
-            Counter.proxy = True
-        elif mode == "7":
-            exit()
-        elif mode == "1" or mode == "2":
+        if mode == "1" or mode == "2":
             if mode == "2":
                 Counter.brute = True
+                self.cuimode = 'y'
+                self.cuitype = 'criminal'
+                print("Mode : criminal activé.")
+                print(Fore.MAGENTA)
+                print_slowly('Utilisation du CUI CRX140', 0.05)
+
             system('cls')
             print(self.t)
             print("")
-        else:
-            print("Wrong number!")
-            system('cls')
-            Main()
-        if not Counter.proxy:
-            checkname = input(f'{Fore.LIGHTMAGENTA_EX}Name for the check: ')
+
             while True:
                 try:
-                    if Checker.mode.lower() in ('bolt', 'cn', 'nexus'):
+                    if Checker.mode.lower() in ('criminal'):
                         self.cuimode = 'y'
                         break
                     elif 'log' == Checker.mode.lower():
                         self.cuimode = 'n'
                         print(Fore.YELLOW)
-                        print_slowly('Using Log Mode', 0.05)
+                        print_slowly('Mode Log activé', 0.05)
                         break
                     else:
-                        Checker.mode = input(f'{Fore.LIGHTCYAN_EX}Display mode? cui/log: ')
+                        Checker.mode = input(f'{Fore.LIGHTCYAN_EX}Mode d’affichage ? cui/log : ')
                 except:
-                    print(f'{Fore.RED}Invalid input')
+                    print(f'{Fore.RED}Entrée invalide')
+
             if self.cuimode == 'y':
                 while True:
                     try:
-                        if Checker.mode.lower() == 'bolt':
-                            self.cuitype = 'bolt'
+                        if Checker.mode.lower() == 'criminal':
+                            self.cuitype = 'criminal'
                             print(Fore.MAGENTA)
-                            print_slowly('Using CRX140 CUI', 0.05)
+                            print_slowly('Utilisation du CUI CRX140', 0.05)
                             break
-                        elif Checker.mode.lower() == 'cn':
-                            self.cuitype = 'cn'
-                            print(Fore.GREEN)
-                            print_slowly('Using CnChecker CUI', 0.05)
-                            break
-                        elif Checker.mode.lower() == 'nexus':
-                            self.cuitype = 'nexus'
-                            print(Fore.RED)
-                            print_slowly('Using Nexus CUI', 0.05)
-                            break
-                        else:
-                            Checker.mode = input(f'{Fore.LIGHTCYAN_EX}CUI mode? bolt/cn/nexus: ')
                     except:
-                        print(f'{Fore.RED}Invalid input')
+                        print(f'{Fore.RED}Entrée invalide')
 
             system('cls')
             print(self.t)
             print("")
+
             print(f'{Fore.LIGHTMAGENTA_EX}Here is your current config:\n')
+
             print(f'{Fore.LIGHTMAGENTA_EX}-- Proxy: {Checker.Proxy.proxy}')
             if Checker.Proxy.proxy == True:
                 print(f'{Fore.LIGHTMAGENTA_EX}-- Proxy Type: {Checker.Proxy.type}')
             print(f'{Fore.LIGHTMAGENTA_EX}-- Threads: {Checker.threads}')
             print(f'{Fore.LIGHTMAGENTA_EX}-- Timeout: {Checker.timeout}')
             print(
-                f'{Fore.LIGHTMAGENTA_EX}Are you happy with this config? (y to start checking n to edit)')
+                f'{Fore.LIGHTMAGENTA_EX}-- Are you happy with this config ?\n\n-- (y to start checking n to edit)')
             edit = input('> ')
             if 'n' in edit:
                 system('cls')
@@ -562,139 +351,124 @@ class Main:
             removed = withoutremoved - len(self.accounts)
             print(
             f'{Fore.LIGHTMAGENTA_EX}Imported {len(self.accounts)} Combo lines after removing {removed} duplicates\n')
-        self.proxylist = []
-        if Checker.Proxy.proxy or Counter.proxy:
-            print(f'{Fore.CYAN}Importing proxies.....\n')
-            while True:
-                if not self.proxyapi:
-                    if not Checker.importFromFile:
-                        read_files = glob('proxies/*.txt')
-                        if read_files == '[]':
-                            print(
-                                f'{Fore.YELLOW}No Proxies files found in directory please put your proxies in there and try again')
-                            input(f'{Fore.CYAN}Press ENTER when you have done that')
-                            continue
-                        for file in read_files:
-                            proxylistt = open(file, 'r', encoding='u8',
-                                            errors='ignore').read().split('\n')
-                            for line in proxylistt:
-                                self.proxylist.append(f'{line}')
-                        break
-                    else:
-                        filename = filedialog.askopenfile(mode='rb', title='Choose a Proxy file',filetype=(("txt", "*.txt"), ("All files", "*.txt")))
-                        if filename is None:
-                            print(Fore.LIGHTRED_EX+"Invalid File.")
-                            sleep(1)
-                            continue
+            self.proxylist = []
+            if Checker.Proxy.proxy or Counter.proxy:
+                print(f'{Fore.CYAN}Importing proxies.....\n')
+                while True:
+                    if not self.proxyapi:
+                        if not Checker.importFromFile:
+                            read_files = glob('proxies/*.txt')
+                            if read_files == '[]':
+                                print(
+                                    f'{Fore.YELLOW}No Proxies files found in directory please put your proxies in there and try again')
+                                input(f'{Fore.CYAN}Press ENTER when you have done that')
+                                continue
+                            for file in read_files:
+                                proxylistt = open(file, 'r', encoding='u8',
+                                                errors='ignore').read().split('\n')
+                                for line in proxylistt:
+                                    self.proxylist.append(f'{line}')
+                            break
                         else:
-                            try:
-                                with open(filename.name, 'r', encoding='u8') as e:
-                                    for line in e:
-                                        self.proxylist.append(f'{line}')
-                                    break
-                            except:
-                                print(Fore.LIGHTRED_EX+"Unable to read from file")
+                            filename = filedialog.askopenfile(mode='rb', title='Choose a Proxy file',filetype=(("txt", "*.txt"), ("All files", "*.txt")))
+                            if filename is None:
+                                print(Fore.LIGHTRED_EX+"Invalid File.")
                                 sleep(1)
                                 continue
-        if Checker.Proxy.proxy or Counter.proxy:
-            if not self.proxyapi:
-                withoutremoved = len(self.proxylist)
-                self.proxylist = list(
-                    set([x.strip() for x in self.proxylist if ":" in x and x != '']))
-                removed = withoutremoved - len(self.proxylist)
-                print(f'{Fore.LIGHTMAGENTA_EX}Imported {len(self.proxylist)} Proxy lines after removing {removed} duplicates')
-            else:
-                if not Counter.proxy:
-                    print(f'{Fore.LIGHTMAGENTA_EX}Importing proxies from api...\n')
-                    self.proxylist = requests.get(
-                        Checker.Proxy.proxy_api_link).text.split('\n')
-                    print(f'{Fore.LIGHTMAGENTA_EX}Imported {len(self.proxylist)} Proxy lines\n')
-        print(f'{Fore.LIGHTMAGENTA_EX}[crx140] Starting Threads...\n')
-        windll.kernel32.SetConsoleTitleW(
-            f'criminal | v{self.version} | Getting ready!')
-        unix = str(strftime('%d-%m-%Y %H-%M-%S'))
-        if not path.exists('Results'):
-            mkdir('Results')
-        if Counter.proxy:
-            self.folder = f'Results/Proxy Checker-{unix}'
-        elif Counter.brute:
-            self.folder = f'Results/Brute Mode-({checkname}){unix}'
-        else:
-            self.folder = f'Results/Normal Mode-({checkname}){unix}'
-        if not path.exists(self.folder):
-            mkdir(self.folder)
-        if Counter.proxy:
-            Thread(target=self.proxy_cpm, daemon=False).start()
-        else:
-            Thread(target=self.cpm_counter, daemon=False).start()
-        Thread(target=self.title, daemon=False).start()
-        self.start_time = time()
-        print(f'{Fore.LIGHTMAGENTA_EX}[crx140] Done!\n')
-        sleep(3)
-        system('cls')
-        print(self.t)
-        if not Counter.proxy:
-            if 'y' == self.cuimode:
-                print(f'{Fore.LIGHTMAGENTA_EX}Checking: CUI Mode')
-            else:
-                print(f'{Fore.LIGHTMAGENTA_EX}Checking: LOG Mode')
-            print(f'{Fore.LIGHTMAGENTA_EX}-- Proxy: {Checker.Proxy.proxy}')
-            if Checker.Proxy.proxy:
-                print(f'{Fore.LIGHTMAGENTA_EX}-- Proxy Type: {Checker.Proxy.type}')
-            print(f'{Fore.LIGHTMAGENTA_EX}-- Threads: {Checker.threads}')
-            print(f'{Fore.LIGHTMAGENTA_EX}-- Timeout: {Checker.timeout}')
-            print(f'{Fore.LIGHTMAGENTA_EX}-- Retries: {Checker.retries}\n')
-            try:
-                print(f'{Fore.LIGHTMAGENTA_EX}- Combo Lines: {len(self.combolist)}')
-                print(f'{Fore.LIGHTMAGENTA_EX}- Proxy Lines: {len(self.proxylist)}\n')
-            except:
-                self.proxylist = []
-                print('\n')
-        else:
-            print(f'{Fore.LIGHTMAGENTA_EX}Checking: Proxy Checker\n')
-            print(f'{Fore.LIGHTMAGENTA_EX}- Proxy Lines: {len(self.proxylist)}\n')
-        if not Counter.proxy:
-            Counter.Checking = True
-        if not Counter.proxy:
-            if 'y' == self.cuimode:
-                Thread(target=self.Refreshconsole, daemon=False).start()
-            Counter.remaining = list(self.accounts)
-            with concurrent.futures.ThreadPoolExecutor(max_workers=Checker.threads) as executor:
-                futures = [executor.submit(self.usecheck, combo) for combo in self.accounts]
-                concurrent.futures.wait(futures)
-        else:
-            with concurrent.futures.ThreadPoolExecutor(max_workers=Checker.threads) as executor:
-                futures = [executor.submit(self.proxycheck, proxy) for proxy in self.proxylist]
-                concurrent.futures.wait(futures)
-        Counter.Checking = False
-        if not Counter.proxy:
-            categorized_data = {
-                "Exclusives": [],
-                "300+ Skins": [],
-                "200-299 Skins": [],
-                "100-199 Skins": [],
-                "50-99 Skins": [],
-                "10-49 Skins": [],
-                "1-9 Skins": [],
-                "0 Skins": []
-            }
-
-            for entry in Counter.sellerstuff:
-                if entry['exclusive']:
-                    categorized_data["Exclusives"].append(entry)
-                elif entry["total_skins"] >= 300:
-                    categorized_data["300+ Skins"].append(entry)
-                elif 200 <= entry["total_skins"] <= 299:
-                    categorized_data["200-299 Skins"].append(entry)
-                elif 100 <= entry["total_skins"] <= 199:
-                    categorized_data["100-199 Skins"].append(entry)
-                elif 50 <= entry["total_skins"] <= 99:
-                    categorized_data["50-99 Skins"].append(entry)
-                elif 10 <= entry["total_skins"] <= 49:
-                    categorized_data["10-49 Skins"].append(entry)
-                elif 1 <= entry["total_skins"] <= 9:
-                    categorized_data["1-9 Skins"].append(entry)
+                            else:
+                                try:
+                                    with open(filename.name, 'r', encoding='u8') as e:
+                                        for line in e:
+                                            self.proxylist.append(f'{line}')
+                                        break
+                                except:
+                                    print(Fore.LIGHTRED_EX+"Unable to read from file")
+                                    sleep(1)
+                                    continue
+            if Checker.Proxy.proxy or Counter.proxy:
+                if not self.proxyapi:
+                    withoutremoved = len(self.proxylist)
+                    self.proxylist = list(
+                        set([x.strip() for x in self.proxylist if ":" in x and x != '']))
+                    removed = withoutremoved - len(self.proxylist)
+                    print(f'{Fore.LIGHTMAGENTA_EX}Imported {len(self.proxylist)} Proxy lines after removing {removed} duplicates')
                 else:
+                    if not Counter.proxy:
+                        print(f'{Fore.LIGHTMAGENTA_EX}Importing proxies from api...\n')
+                        self.proxylist = requests.get(
+                            Checker.Proxy.proxy_api_link).text.split('\n')
+                        print(f'{Fore.LIGHTMAGENTA_EX}Imported {len(self.proxylist)} Proxy lines\n')
+            print(f'{Fore.LIGHTMAGENTA_EX}[crx140] Starting Threads...\n')
+            windll.kernel32.SetConsoleTitleW(
+                f'criminal |  v.free  | Getting ready!')
+            unix = str(strftime('%d-%m-%Y %H-%M-%S'))
+            if not path.exists('Results'):
+                mkdir('Results')
+            if Counter.proxy:
+                self.folder = f'Results/Proxy Checker-{unix}'
+            elif Counter.brute:
+                self.folder = f'Results/Brute Mode-(criminal){unix}'
+            else:
+                self.folder = f'Results/Normal Mode-(criminal){unix}'
+            if not path.exists(self.folder):
+                mkdir(self.folder)
+            if Counter.proxy:
+                Thread(target=self.proxy_cpm, daemon=False).start()
+            else:
+                Thread(target=self.cpm_counter, daemon=False).start()
+            Thread(target=self.title, daemon=False).start()
+            self.start_time = time()
+            print(f'{Fore.LIGHTMAGENTA_EX}[crx140] Done!\n')
+            sleep(3)
+            system('cls')
+            print(self.t)
+            if not Counter.proxy:
+                if 'y' == self.cuimode:
+                    print(f'{Fore.LIGHTMAGENTA_EX}Checking: CUI Mode')
+                else:
+                    print(f'{Fore.LIGHTMAGENTA_EX}Checking: LOG Mode')
+                print(f'{Fore.LIGHTMAGENTA_EX}-- Proxy: {Checker.Proxy.proxy}')
+                if Checker.Proxy.proxy:
+                    print(f'{Fore.LIGHTMAGENTA_EX}-- Proxy Type: {Checker.Proxy.type}')
+                print(f'{Fore.LIGHTMAGENTA_EX}-- Threads: {Checker.threads}')
+                print(f'{Fore.LIGHTMAGENTA_EX}-- Timeout: {Checker.timeout}')
+                print(f'{Fore.LIGHTMAGENTA_EX}-- Retries: {Checker.retries}\n')
+                try:
+                    print(f'{Fore.LIGHTMAGENTA_EX}- Combo Lines: {len(self.combolist)}')
+                    print(f'{Fore.LIGHTMAGENTA_EX}- Proxy Lines: {len(self.proxylist)}\n')
+                except:
+                    self.proxylist = []
+                    print('\n')
+            else:
+                print(f'{Fore.LIGHTMAGENTA_EX}Checking: Proxy Checker\n')
+                print(f'{Fore.LIGHTMAGENTA_EX}- Proxy Lines: {len(self.proxylist)}\n')
+            if not Counter.proxy:
+                Counter.Checking = True
+            if not Counter.proxy:
+                if 'y' == self.cuimode:
+                    Thread(target=self.Refreshconsole, daemon=False).start()
+                Counter.remaining = list(self.accounts)
+                with concurrent.futures.ThreadPoolExecutor(max_workers=Checker.threads) as executor:
+                    futures = [executor.submit(self.usecheck, combo) for combo in self.accounts]
+                    concurrent.futures.wait(futures)
+            else:
+                with concurrent.futures.ThreadPoolExecutor(max_workers=Checker.threads) as executor:
+                    futures = [executor.submit(self.proxycheck, proxy) for proxy in self.proxylist]
+                    concurrent.futures.wait(futures)
+            Counter.Checking = False
+            if not Counter.proxy:
+                categorized_data = {
+                    "Exclusives": [],
+                    "300+ Skins": [],
+                    "200-299 Skins": [],
+                    "100-199 Skins": [],
+                    "50-99 Skins": [],
+                    "10-49 Skins": [],
+                    "1-9 Skins": [],
+                    "0 Skins": []
+                }
+
+                for entry in Counter.sellerstuff:
                     categorized_data["0 Skins"].append(entry)
 
             with open(f'{self.folder}/Seller Log.txt', 'w') as file:
@@ -2134,7 +1908,7 @@ class Main:
                     badd = inval / Total * 100
                     Counter.failedpercent = round(badd, 2)
                     windll.kernel32.SetConsoleTitleW(
-                        f"crx140 | v{self.version}"
+                        f"crx140 |  v.free "
                         f" | Checked: {int(Counter.bad) + int(Counter.hits) + Counter.custom + Counter.mshit + Counter.locked}/{Total} ({Counter.checkedpercent}%)"
                         f" | Hits: {Counter.hits} ({Counter.hitspercent}%) [{estimatedhits}]"
                         f" | MS-Hits: {Counter.mshit} ({Counter.mshitspercent}%)"
@@ -2146,7 +1920,7 @@ class Main:
                     chek = Counter.hits
                     Counter.checkedpercent = round((chek / Total) * 100, 2)
                     windll.kernel32.SetConsoleTitleW(
-                        f"crx140 | v{self.version}"
+                        f"crx140 |  v.free "
                         f" | Checked: {Counter.bad + Counter.hits}/{Total} ({Counter.checkedpercent}%)"
                         f" | Hits: {Counter.hits} ({Counter.hitspercent}%) [{estimatedhits}]"
                         f" | Failed: {Counter.bad} ({Counter.failedpercent}%)"
@@ -2154,7 +1928,7 @@ class Main:
                         f' | Checking for: {self.Timeused()}')
                 else:
                     windll.kernel32.SetConsoleTitleW(
-                        f"crx140 | v{self.version}"
+                        f"crx140 |  v.free "
                         f" | Checked: {int(Counter.bad) + int(Counter.hits) + Counter.custom + Counter.mshit + Counter.locked + Counter.fnban}/{Total} ({Counter.checkedpercent}%)"
                         f" | Hits: {Counter.hits + Counter.fnban} ({Counter.hitspercent}%) [{estimatedhits}]"
                         f" | Headless: {Counter.headless} ({Counter.headlesspercent}%)"
@@ -2206,103 +1980,7 @@ class Main:
         while Counter.Checking:
             try:
                 time.sleep(1)
-                if self.cuitype == 'cn':
-                    logo_colored = [
-                        f"                {Fore.GREEN}██████{Fore.CYAN}╗{Fore.GREEN}  ██████{Fore.CYAN}╗{Fore.GREEN} ██{Fore.CYAN}╗{Fore.GREEN}  ████████{Fore.CYAN}╗{Fore.GREEN} ██████{Fore.CYAN}╗{Fore.GREEN}██{Fore.CYAN}╗{Fore.GREEN}  ██{Fore.CYAN}╗{Fore.GREEN}███████{Fore.CYAN}╗{Fore.GREEN} ██████{Fore.CYAN}╗{Fore.GREEN}██{Fore.CYAN}╗{Fore.GREEN}  ██{Fore.CYAN}╗{Fore.GREEN}███████{Fore.CYAN}╗{Fore.GREEN}██████{Fore.CYAN}╗",
-                        f"                {Fore.GREEN}██{Fore.CYAN}╔══{Fore.GREEN}██{Fore.CYAN}╗{Fore.GREEN}██{Fore.CYAN}╔═══{Fore.GREEN}██{Fore.CYAN}╗{Fore.GREEN}██{Fore.CYAN}║  ╚══{Fore.GREEN}██{Fore.CYAN}╔══╝{Fore.GREEN}██{Fore.CYAN}╔════╝{Fore.GREEN}██{Fore.CYAN}║{Fore.GREEN}  ██{Fore.CYAN}║{Fore.GREEN}██{Fore.CYAN}╔════╝{Fore.GREEN}██{Fore.CYAN}╔════╝{Fore.GREEN}██{Fore.CYAN}║{Fore.GREEN} ██{Fore.CYAN}╔╝{Fore.GREEN}██{Fore.CYAN}╔════╝{Fore.GREEN}██{Fore.CYAN}╔══{Fore.GREEN}██{Fore.CYAN}╗",
-                        f"                {Fore.GREEN}██████{Fore.CYAN}╔╝{Fore.GREEN}██{Fore.CYAN}║{Fore.GREEN}   ██{Fore.CYAN}║{Fore.GREEN}██{Fore.CYAN}║    {Fore.GREEN} ██{Fore.CYAN}║  {Fore.GREEN} ██{Fore.CYAN}║{Fore.GREEN}     ███████{Fore.CYAN}║{Fore.GREEN}█████{Fore.CYAN}╗{Fore.GREEN}  ██{Fore.CYAN}║    {Fore.GREEN} █████{Fore.CYAN}╔╝{Fore.GREEN} █████{Fore.CYAN}╗  {Fore.GREEN}██████{Fore.CYAN}╔╝",
-                        f"                {Fore.CYAN}██{Fore.GREEN}╔══{Fore.CYAN}██{Fore.GREEN}╗{Fore.CYAN}██{Fore.GREEN}║  {Fore.CYAN} ██{Fore.GREEN}║{Fore.CYAN}██{Fore.GREEN}║    {Fore.CYAN} ██{Fore.GREEN}║   {Fore.CYAN}██{Fore.GREEN}║{Fore.CYAN}     ██{Fore.GREEN}╔══{Fore.CYAN}██{Fore.GREEN}║{Fore.CYAN}██{Fore.GREEN}╔══╝  {Fore.CYAN}██{Fore.GREEN}║     {Fore.CYAN}██{Fore.GREEN}╔═{Fore.CYAN}██{Fore.GREEN}╗{Fore.CYAN} ██{Fore.GREEN}╔══╝ {Fore.CYAN} ██{Fore.GREEN}╔══{Fore.CYAN}██{Fore.GREEN}╗",
-                        f"                {Fore.CYAN}██████{Fore.GREEN}╔╝╚{Fore.CYAN}██████{Fore.GREEN}╔╝{Fore.CYAN}███████{Fore.GREEN}╗{Fore.CYAN}██{Fore.GREEN}║   ╚{Fore.CYAN}██████{Fore.GREEN}╗{Fore.CYAN}██{Fore.GREEN}║  {Fore.CYAN}██{Fore.GREEN}║{Fore.CYAN}███████{Fore.GREEN}╗╚{Fore.CYAN}██████{Fore.GREEN}╗{Fore.CYAN}██{Fore.GREEN}║ {Fore.CYAN} ██{Fore.GREEN}╗{Fore.CYAN}███████{Fore.GREEN}╗{Fore.CYAN}██{Fore.GREEN}║  {Fore.CYAN}██{Fore.GREEN}║",
-                        f"                {Fore.GREEN}╚═════╝  ╚═════╝ ╚══════╝╚═╝    ╚═════╝╚═╝  ╚═╝╚══════╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝",
-                    ]
-                    total_chars = sum(line.count('█') + line.count('╔') + line.count('╗') + line.count('╚') + line.count('═') + line.count('║') for line in logo_colored)
-                    chars_to_color = total_chars if Counter.checkedpercent >= 100 else int(round(total_chars * Counter.checkedpercent / 100))
-
-                    colored_logo = ""
-                    colored_count = 0
-
-                    for line in logo_colored:
-                        colored_line = ""
-                        for char in line:
-                            if char in '█╔╗═║╚' and colored_count < chars_to_color:
-                                colored_line += char  
-                                colored_count += 1
-                            else:
-                                if char in '█╔╗═║╚':
-                                    colored_line += Fore.LIGHTWHITE_EX + char + colorama.Style.RESET_ALL
-                                else:
-                                    colored_line += char 
-                        colored_logo += colored_line + "\n"
-                    system('cls')
-                    print(colored_logo)
-                    categories = {
-                        "Exclusive": {"FA": 0, "NFA": 0},
-                        "300+ Skins": {"FA": 0, "NFA": 0},
-                        "200-299 Skins": {"FA": 0, "NFA": 0},
-                        "100-199 Skins": {"FA": 0, "NFA": 0},
-                        "50-99 Skins": {"FA": 0, "NFA": 0},
-                        "10-49 Skins": {"FA": 0, "NFA": 0},
-                        "1-9 Skins": {"FA": 0, "NFA": 0},
-                        "0 Skins": {"FA": 0, "NFA": 0}
-                    }
-                    for data in Counter.skins_data:
-                        fullAccess = data["fullAccess"]
-                        total_skins = data["total_skins"]
-                        exclusive = data['exclusive']
-                        if exclusive:
-                            categories["Exclusive"][fullAccess] += 1
-                        elif 300 <= total_skins:
-                            categories["300+ Skins"][fullAccess] += 1
-                        elif 200 <= total_skins <= 299:
-                            categories["200-299 Skins"][fullAccess] += 1
-                        elif 100 <= total_skins <= 199:
-                            categories["100-199 Skins"][fullAccess] += 1
-                        elif 50 <= total_skins <= 99:
-                            categories["50-99 Skins"][fullAccess] += 1
-                        elif 10 <= total_skins <= 49:
-                            categories["10-49 Skins"][fullAccess] += 1
-                        elif 1 <= total_skins <= 9:
-                            categories["1-9 Skins"][fullAccess] += 1
-                        elif total_skins == 0:
-                            categories["0 Skins"][fullAccess] += 1
-
-                    tree = categories
-                    total_hits = sum(counts["FA"] + counts["NFA"] for counts in tree.values())
-
-                    print(f'                                                {Fore.WHITE}[Progress: {Counter.checkedpercent:.2f}%{Fore.WHITE}]\n\n')
-                    print(f"{Fore.WHITE}[{Counter.bad + Counter.custom + Counter.locked}] {Fore.RED}Bad")
-                    print(f" {Fore.WHITE}├── [{Counter.bad}] {Fore.YELLOW}Invalid")
-                    print(f" {Fore.WHITE}├── [{Counter.locked}] {Fore.YELLOW}Locked")
-                    print(f" {Fore.WHITE}└── [{Counter.custom}] {Fore.YELLOW}2FA")
-                    print(f"{Fore.WHITE}[{Counter.mshit}] {Fore.GREEN}MS-Hit")
-                    print(f" {Fore.WHITE}├── [{Counter.headless}] {Fore.GREEN}Headless")
-                    print(f" {Fore.WHITE}├── [{Counter.mshit - Counter.epic2fa - Counter.xb - Counter.headless}] {Fore.YELLOW}Not linked")
-                    print(f" {Fore.WHITE}├── [{Counter.epic2fa}] {Fore.YELLOW}2FA")
-                    print(f" {Fore.WHITE}├── [{Counter.xb}] {Fore.YELLOW}Xbox")
-                    print(f" {Fore.WHITE}└── [{Counter.fnban}] {Fore.YELLOW}Banned")
-                    print(f"{Fore.WHITE}[{total_hits}] {Fore.GREEN}Hit")
-                    category_list = list(tree.items())  
-                    last_category_idx = len(category_list) - 1
-                    for idx, (category, counts) in enumerate(category_list):
-                        fa_count = counts['FA']
-                        nfa_count = counts['NFA']
-                        total_count = fa_count + nfa_count
-
-                        is_last_category = idx == last_category_idx
-                        if is_last_category:
-                            print(f"{Fore.WHITE} └── [{total_count}] {Fore.CYAN}{category}")
-                        else:
-                            print(f"{Fore.WHITE} ├── [{total_count}] {Fore.CYAN}{category}")
-
-                        fa_vertical = Fore.WHITE + " │" if not is_last_category else Fore.WHITE + "  "
-                        nfa_vertical = Fore.WHITE + "  " if fa_count > 0 and is_last_category else fa_vertical
-
-                        if fa_count > 0:
-                            print(f"{fa_vertical}    {Fore.WHITE}└── {Fore.WHITE}[{fa_count}] {Fore.GREEN}FA")
-
-                        if nfa_count > 0:
-                            print(f"{nfa_vertical}    {Fore.WHITE}└── {Fore.WHITE}[{nfa_count}] {Fore.GREEN}NFA")
-                elif self.cuitype == 'bolt':
+                if self.cuitype == 'criminal':
                     gradient_colors = [
     Fore.LIGHTMAGENTA_EX,               # Magenta pur
     Fore.LIGHTMAGENTA_EX,       # Magenta clair
@@ -2392,806 +2070,13 @@ class Main:
 
 
                         )
-                    else:
-                        result = (
-                            f'                                       {Fore.LIGHTMAGENTA_EX}  ------CHECKER-------     -------STATS-------\n'
-                            f'                                          {symbo5} Hits      {Counter.hits:<8}  {symbo4} Locked    {Counter.locked:<8}\n'
-                            f'                                          {symbo6} Fails     {bad:<8}  {symbol} 2FA       {Counter.custom:<8}\n'
-                            f'                                          {symbo7} CPM       {Counter.cpm:<8}  {symbo2} Invalid   {Counter.bad:<8}\n'
-                            f'                                         {Fore.LIGHTMAGENTA_EX}--------------------     -------------------'
-                        )
 
                     print(result)
-                elif self.cuitype == 'nexus':
-                    logo_colored = [
-                                            f"                  {Fore.RED}██████{Fore.LIGHTRED_EX}╗{Fore.RED}  ██████{Fore.LIGHTRED_EX}╗{Fore.RED} ██{Fore.LIGHTRED_EX}╗{Fore.RED}  ████████{Fore.LIGHTRED_EX}╗{Fore.RED} ██████{Fore.LIGHTRED_EX}╗{Fore.RED}██{Fore.LIGHTRED_EX}╗{Fore.RED}  ██{Fore.LIGHTRED_EX}╗{Fore.RED}███████{Fore.LIGHTRED_EX}╗{Fore.RED} ██████{Fore.LIGHTRED_EX}╗{Fore.RED}██{Fore.LIGHTRED_EX}╗{Fore.RED}  ██{Fore.LIGHTRED_EX}╗{Fore.RED}███████{Fore.LIGHTRED_EX}╗{Fore.RED}██████{Fore.LIGHTRED_EX}╗",
-                                            f"                  {Fore.RED}██{Fore.LIGHTRED_EX}╔══{Fore.RED}██{Fore.LIGHTRED_EX}╗{Fore.RED}██{Fore.LIGHTRED_EX}╔═══{Fore.RED}██{Fore.LIGHTRED_EX}╗{Fore.RED}██{Fore.LIGHTRED_EX}║  ╚══{Fore.RED}██{Fore.LIGHTRED_EX}╔══╝{Fore.RED}██{Fore.LIGHTRED_EX}╔════╝{Fore.RED}██{Fore.LIGHTRED_EX}║{Fore.RED}  ██{Fore.LIGHTRED_EX}║{Fore.RED}██{Fore.LIGHTRED_EX}╔════╝{Fore.RED}██{Fore.LIGHTRED_EX}╔════╝{Fore.RED}██{Fore.LIGHTRED_EX}║{Fore.RED} ██{Fore.LIGHTRED_EX}╔╝{Fore.RED}██{Fore.LIGHTRED_EX}╔════╝{Fore.RED}██{Fore.LIGHTRED_EX}╔══{Fore.RED}██{Fore.LIGHTRED_EX}╗",
-                                            f"                  {Fore.RED}██████{Fore.LIGHTRED_EX}╔╝{Fore.RED}██{Fore.LIGHTRED_EX}║{Fore.RED}   ██{Fore.LIGHTRED_EX}║{Fore.RED}██{Fore.LIGHTRED_EX}║    {Fore.RED} ██{Fore.LIGHTRED_EX}║  {Fore.RED} ██{Fore.LIGHTRED_EX}║{Fore.RED}     ███████{Fore.LIGHTRED_EX}║{Fore.RED}█████{Fore.LIGHTRED_EX}╗{Fore.RED}  ██{Fore.LIGHTRED_EX}║    {Fore.RED} █████{Fore.LIGHTRED_EX}╔╝{Fore.RED} █████{Fore.LIGHTRED_EX}╗  {Fore.RED}██████{Fore.LIGHTRED_EX}╔╝",
-                                            f"                  {Fore.LIGHTRED_EX}██{Fore.RED}╔══{Fore.LIGHTRED_EX}██{Fore.RED}╗{Fore.LIGHTRED_EX}██{Fore.RED}║  {Fore.LIGHTRED_EX} ██{Fore.RED}║{Fore.LIGHTRED_EX}██{Fore.RED}║    {Fore.LIGHTRED_EX} ██{Fore.RED}║   {Fore.LIGHTRED_EX}██{Fore.RED}║{Fore.LIGHTRED_EX}     ██{Fore.RED}╔══{Fore.LIGHTRED_EX}██{Fore.RED}║{Fore.LIGHTRED_EX}██{Fore.RED}╔══╝  {Fore.LIGHTRED_EX}██{Fore.RED}║     {Fore.LIGHTRED_EX}██{Fore.RED}╔═{Fore.LIGHTRED_EX}██{Fore.RED}╗{Fore.LIGHTRED_EX} ██{Fore.RED}╔══╝ {Fore.LIGHTRED_EX} ██{Fore.RED}╔══{Fore.LIGHTRED_EX}██{Fore.RED}╗",
-                                            f"                  {Fore.LIGHTRED_EX}██████{Fore.RED}╔╝╚{Fore.LIGHTRED_EX}██████{Fore.RED}╔╝{Fore.LIGHTRED_EX}███████{Fore.RED}╗{Fore.LIGHTRED_EX}██{Fore.RED}║   ╚{Fore.LIGHTRED_EX}██████{Fore.RED}╗{Fore.LIGHTRED_EX}██{Fore.RED}║  {Fore.LIGHTRED_EX}██{Fore.RED}║{Fore.LIGHTRED_EX}███████{Fore.RED}╗╚{Fore.LIGHTRED_EX}██████{Fore.RED}╗{Fore.LIGHTRED_EX}██{Fore.RED}║ {Fore.LIGHTRED_EX} ██{Fore.RED}╗{Fore.LIGHTRED_EX}███████{Fore.RED}╗{Fore.LIGHTRED_EX}██{Fore.RED}║  {Fore.LIGHTRED_EX}██{Fore.RED}║",
-                                            f"                  {Fore.RED}╚═════╝  ╚═════╝ ╚══════╝╚═╝    ╚═════╝╚═╝  ╚═╝╚══════╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝",
-                    ]
-                    total_chars = sum(line.count('█') + line.count('╔') + line.count('╗') + line.count('╚') + line.count('═') + line.count('║') for line in logo_colored)
-                    chars_to_color = total_chars if Counter.checkedpercent >= 100 else int(round(total_chars * Counter.checkedpercent / 100))
-
-                    colored_logo = ""
-                    colored_count = 0
-
-                    for line in logo_colored:
-                                            colored_line = ""
-                                            for char in line:
-                                                if char in '█╔╗═║╚' and colored_count < chars_to_color:
-                                                    colored_line += char  
-                                                    colored_count += 1
-                                                else:
-                                                    if char in '█╔╗═║╚':
-                                                        colored_line += Fore.LIGHTWHITE_EX + char + colorama.Style.RESET_ALL
-                                                    else:
-                                                        colored_line += char 
-                                            colored_logo += colored_line + "\n"
-                    system('cls')
-                    print(colored_logo)
-                    zeroskins = 0
-                    oneplus = 0
-                    tenplus = 0
-                    fiftyplus = 0
-                    onehundredplus = 0
-                    twohundredplus = 0
-                    threehundredplus = 0
-                    exclusivee = 0
-                    maybefa = 0
-                    for data in Counter.skins_data:
-                        fullAccess = data["fullAccess"]
-                        total_skins = data["total_skins"]
-                        exclusive = data['exclusive']
-                        if fullAccess.lower() == 'fa':
-                            maybefa += 1
-                        if exclusive:
-                            exclusivee+=1
-                        elif 300 <= total_skins:
-                            threehundredplus+=1
-                        elif 200 <= total_skins <= 299:
-                            twohundredplus+=1
-                        elif 100 <= total_skins <= 199:
-                            onehundredplus+=1
-                        elif 50 <= total_skins <= 99:
-                            fiftyplus+=1
-                        elif 10 <= total_skins <= 49:
-                            tenplus+=1
-                        elif 1 <= total_skins <= 9:
-                            oneplus+=1
-                        elif total_skins == 0:
-                            zeroskins +=1
-                    def print_formatted(text, value1, value2, value3=None, color1=Fore.WHITE, color2=Fore.WHITE):
-                        if value3 is not None:
-                            print(f"{color1}{text.format(value1, value2, value3)}{color2}")
-                        else:
-                            print(f"{color1}{text.format(value1, value2)}{color2}")
-
-                    checked = int(Counter.bad) + int(Counter.hits) + Counter.custom + Counter.mshit + Counter.locked
-                    print_formatted("                                              [{1}]  Progress      [{0}/{2}]", checked, ">>", len(self.accounts), Fore.RED, Fore.WHITE)
-                    print()
-                    print_formatted("                                              [{1}]  Hits          [{0}]", Counter.hits, ">>", color1=Fore.GREEN)
-                    print_formatted("                                              [{1}]  2fa           [{0}]", Counter.custom, ">>", color1=Fore.LIGHTYELLOW_EX)
-                    print_formatted("                                              [{1}]  Epic 2fa      [{0}]", Counter.epic2fa, ">>", color1=Fore.YELLOW)
-                    print_formatted("                                              [{1}]  Maybe FA      [{0}]", maybefa, ">>", color1=Fore.LIGHTMAGENTA_EX)
-                    print_formatted("                                              [{1}]  Looted        [{0}]", Counter.locked, ">>", color1=Fore.LIGHTBLACK_EX)
-                    print_formatted("                                              [{1}]  Fails         [{0}]", Counter.bad, ">>", color1=Fore.LIGHTRED_EX)
-                    print()
-                    print_formatted("                                              [{1}]  300+ Skins    [{0}]", threehundredplus, ">>", color1=Fore.RED)
-                    print_formatted("                                              [{1}]  200+ Skins    [{0}]", twohundredplus, ">>", color1=Fore.RED)
-                    print_formatted("                                              [{1}]  100+ Skins    [{0}]", onehundredplus, ">>", color1=Fore.RED)
-                    print_formatted("                                              [{1}]  50+  Skins    [{0}]", fiftyplus, ">>", color1=Fore.RED)
-                    print_formatted("                                              [{1}]  10+  Skins    [{0}]", tenplus, ">>", color1=Fore.RED)
-                    print_formatted("                                              [{1}]  1+   Skins    [{0}]", oneplus, ">>", color1=Fore.RED)
-                    print_formatted("                                              [{1}]  0    Skins    [{0}]", zeroskins, ">>", color1=Fore.RED)
-
-                    print()
-                    print_formatted("                                              [{1}]  STW           [{0}]", Counter.stw, ">>", color1=Fore.YELLOW)
-                    print_formatted("                                              [{1}]  OGS           [{0}]", Counter.og, ">>", color1=Fore.MAGENTA)
-                    print_formatted("                                              [{1}]  Rares         [{0}]", exclusivee, ">>", color1=Fore.CYAN)
-                    print()
-                    print_formatted("                                              [{1}]  Retries       [{0}]", Counter.retries, ">>", color1=Fore.LIGHTYELLOW_EX)
-                    print_formatted("                                              [{1}]  CPM           [{0}]", Counter.cpm, ">>", color1=Fore.WHITE)
-
             except Exception as e:
                 print(f"{Fore.RED}{e}")
     def Timeused(self):
         from time import time
         return strftime("%H:%M:%S", gmtime(time() - self.start_time))
-
-    def get_option(self, option):
-        options = {
-            1: self.password1,
-            2: self.generaledits,
-            3: self.domain_sorter,
-            4: self.domain_adder,
-            5: self.domain,
-            6: self.split,
-            8: self.names,
-            9: self.emails,
-            10: self.combo,
-            11: self.sort,
-            12: self.filter,
-            13: self.domainchanger,
-            14: self.splitter
-
-
-        }
-        options[int(option)]()
-    
-
-    def filter(self):
-        system('cls')
-        print(self.t)
-        output_file: str = f'Results/Filtered{self.unix}.txt'
-        print(f'{Fore.CYAN}\n[ComboEditor] Removing...')
-        with open(self.file, 'r', encoding='utf8') as in_file, \
-                open(f'{output_file}', 'a', encoding='utf8') as out_file:
-            for line in in_file:
-                if line.count(':') == 1:
-                    if '@' in line.split(':')[0]:
-                        if '.' in line:
-                                out_file.write(line)
-                                Counter.goodlines += 1
-                        else:
-                            Counter.badlines += 1
-                    else:
-                        Counter.badlines += 1
-                else:
-                    Counter.badlines += 1
-            afterremove = open(output_file, 'r', encoding='u8',
-                               errors='ignore').read().split('\n')
-            beforeremove = open(self.file, 'r', encoding='u8',
-                                errors='ignore').read().split('\n')
-            print(
-                f'{Fore.CYAN}[ComboEditor] Removed Badlines, Saved in {output_file}')
-            print(
-                f'{Fore.CYAN}[ComboEditor] Before: {len(beforeremove)} After: {len(afterremove)}\n')
-            input(
-                f'{Fore.LIGHTCYAN_EX}[Menu] Press ENTER to get back to the menu')
-            system('cls')
-            Main()
-
-    def sort(self):
-        output_file: str = f'Duplicate_Removed{self.unix}.txt'
-        open(output_file, 'w', encoding='latin-1').writelines(
-            set(self.lines.readlines()))
-        print(
-            f'{Fore.CYAN}\n[ComboEditor] Removed Duplicates, Saved in {output_file}')
-        afterremove = open(output_file, 'r', encoding='u8',
-                           errors='ignore').read().split('\n')
-        beforeremove = open(self.file, 'r', encoding='u8',
-                            errors='ignore').read().split('\n')
-        print(
-            f'{Fore.CYAN}[ComboEditor] Before: {len(beforeremove)} After: {len(afterremove)}\n')
-        input(f'{Fore.LIGHTCYAN_EX}[Menu] Press ENTER to get back to the menu')
-        system('cls')
-        Main()
-    def domainchanger(self):
-        with open(self.file, 'r', encoding='utf8') as in_file, \
-                open(f'Results/domain added{self.created}.txt', 'a', encoding='utf8') as out_file:
-            for line in in_file:
-                if ':' in line:
-                    email,passw = line.split(':')
-                    if '@' in email and '.' in email:
-                        username = email.split('@')[0]
-                        line = f'{username}@hotmail.com:{passw}'
-                        out_file.write(line)
-    def domain_adder(self):
-        with open(self.file, 'r', encoding='utf8') as in_file, \
-                open(f'Results/domain added{self.created}.txt', 'a') as out_file:
-            for line in in_file:
-                top = line.split(':')[0]
-                end = line.split(':')[-1]
-                if top.__contains__("@"):
-                    break
-                else:
-                    for domain in self.domain_list:
-                        added = f"{top}{domain}:{end}"
-                        out_file.write(added)
-
-    def split(self):
-        print('')
-        chunks = int(
-            input(f'{Fore.CYAN}[ComboEditor] Amount of lines in each file:\n> '))
-        name = input(f'{Fore.CYAN}\n[ComboEditor] Name of splitted files:\n> ')
-        sorting = True
-        hold_lines = []
-        for row in self.lines:
-            hold_lines.append(row)
-        outer_count = 1
-        line_count: int = 0
-        while sorting:
-            num = str(outer_count)
-            count = 0
-            increment = (outer_count - 1) * chunks
-            left = len(hold_lines) - increment
-            file_name = f'{str(num)}-{name}.txt'
-            hold_new_lines = []
-            if left < chunks:
-                while count < left:
-                    hold_new_lines.append(hold_lines[line_count])
-                    count += 1
-                    line_count += 1
-                sorting = False
-            else:
-                while count < chunks:
-                    hold_new_lines.append(hold_lines[line_count])
-                    count += 1
-                    line_count += 1
-                outer_count += 1
-                with open(file_name, 'w', encoding='latin-1') as next_file:
-                    for row in hold_new_lines:
-                        next_file.write(row)
-        print(
-            f'{Fore.CYAN}\n[ComboEditor] Done Splitting \n Splitted into {str(outer_count - 1)} files\n')
-        input(f'{Fore.LIGHTCYAN_EX}[Menu] Press ENTER to get back to the menu')
-        system('cls')
-        Main()
-
-    def get(self):
-        system('cls')
-        print(f'{Fore.CYAN}\n[ComboEditor] Merging\n')
-        read_files = glob(f'{self.folder}/*.txt')
-        for f in read_files:
-            with open(f, 'r', encoding='latin-1') as outfile:
-                self.infile.write(outfile.read())
-        print(
-            f'{Fore.CYAN}\n[ComboEditor] All text files in {self.folder} were merged and saved in {self.result}\n')
-        input(f'{Fore.LIGHTCYAN_EX}[Menu] Press ENTER to get back to the menu')
-        system('cls')
-        Main()
-
-    def emails(self):
-        system('cls')
-        print(f'{Fore.CYAN}\n[ComboEditor] Extracting\n')
-        name = f'Emails{self.unix}.txt'
-        out = open(name, 'w', encoding='latin-1')
-        for array_item in self.lines.readlines():
-            match_list2 = findall(rf'{self.email}', array_item)
-            if len(match_list2) > 0:
-                out.write(f'{match_list2[0]}\n')
-        print(
-            f'{Fore.CYAN}\n[ComboEditor] Done extracting emails.{self.extracted} emails in {name}\n')
-        input(f'{Fore.LIGHTCYAN_EX}[Menu] Press ENTER to get back to the menu')
-        system('cls')
-        Main()
-
-    def names(self):
-        system('cls')
-        print(f'{Fore.CYAN}\n[ComboEditor] Extracting\n')
-        name = f'Usernames{self.unix}.txt'
-        out = open(name, 'w', encoding='latin-1')
-        for array_item in self.lines.readlines():
-            match_list1 = findall(r'[\w.*]+', array_item)
-            if len(match_list1) > 0:
-                out.write(f'{match_list1[0]}')
-        print(
-            f'{Fore.CYAN}\n[ComboEditor] Done extracting usernames.{self.extracted} usernames in {name}\n')
-        input(f'{Fore.LIGHTCYAN_EX}[Menu] Press ENTER to get back to the menu')
-        system('cls')
-        Main()
-    def combo(self):
-        system('cls')
-        print(f'{Fore.CYAN}\n[ComboEditor] Extracting\n')
-        name = f'Combos{self.unix}.txt'
-        out = open(name, 'w', encoding='latin-1')
-        for ArrayItem in self.lines.readlines():
-            match_list = findall(
-                rf'{self.email}:[\w!@#$%^&*()''"-{}?;~:]+', ArrayItem)
-            if len(match_list) > 0:
-                out.write(f'{match_list[0]}\n')
-        print(
-            f'{Fore.CYAN}\n[ComboEditor] Done extracting combos.{self.extracted} combos in {name}\n')
-        input(f'{Fore.LIGHTCYAN_EX}[Menu] Press ENTER to get back to the menu')
-        system('cls')
-        Main()
-
-    def splitter(self):
-        system('cls')
-        sep = input("Input delimiter (Default is '|')\n> ")
-        if sep == '':
-            delimiter = '|'
-        else:
-            delimiter = sep
-        done = []
-        lines = self.lines.readlines()
-        for line in lines:
-            user1 = line.split(delimiter)
-            user = user1[0].strip()
-            print(user)
-            done.append(user)
-        usernames = f'User{self.unix}.txt'
-        for line in done:
-            with open(usernames, 'a', encoding='utf-8') as f:
-                f.write(f'{line}\n')
-        print(
-            f'{Fore.CYAN}\n[ComboEditor] Lines saved in {usernames}\n')
-        input(f'{Fore.LIGHTCYAN_EX}[Menu] Press ENTER to get back to the menu')
-        system('cls')
-        Main()
-
-    def domain(self):
-        name = f'RemovedDomains{self.unix}.txt'
-        out = open(name, 'w')
-        for ArrayItem in self.lines.readlines():
-            match = findall(r'@[\w.]+', ArrayItem)
-            if len(match) > 0:
-                remove = ArrayItem.replace(match[0], '')
-                out.write(remove)
-        print(
-            f'{Fore.CYAN}\n[ComboEditor] Successfully removed all domains.\nUser saved in {name}\n')
-        input(f'{Fore.LIGHTCYAN_EX}[Menu] Press ENTER to get back to the menu')
-        system('cls')
-        Main()
-
-    def domain_sorter(self):
-        system('cls')
-        print(f'{Fore.CYAN}[ComboEditor] Sorting Domains to Results/Domains')
-        reg = compilee(r'(\.\w+):')
-        if not path.exists("Results/Domains"):
-            mkdir("Results/Domains")
-        with open(self.file, 'r', encoding='utf8') as in_file:
-            for line in in_file:
-                if '@' in line:
-                    rep = reg.search(line)
-                    rep = rep.group().replace(':', '')
-                    rep = rep.replace('\n', '')
-                    with open(f'Results/Domains/{rep}{self.created}.txt', 'a') as file:
-                        file.write(line)
-
-                else:
-                    with open(f'Results/Invalid{self.created}.txt', 'a') as invalid:
-                        invalid.write(line)
-
-                    w = line.replace('\n', '')
-                    print(Fore.RED + f"Invalid line")
-            print(f'{Fore.CYAN}[ComboEditor] Done Sorting')
-            input(
-                f'{Fore.LIGHTCYAN_EX}[Menu] Press ENTER to get back to the menu')
-            system('cls')
-            Main()
-
-    def email_domain(self):
-        reg = compilee(r'@[\w.]+')
-        with open(self.file, 'r', encoding='utf8') as in_file, \
-                open(f'Results/MailDomain{self.created}.txt', 'a') as out_file:
-            for line in in_file:
-                if '@' in line:
-                    domain = choice(self.domain_list)
-                    rep = reg.sub(domain, line)
-                    rep = rep.replace('\n', '')
-                    print(Fore.LIGHTGREEN_EX + f'{line} Replace with {rep}')
-                    out_file.write(rep + '\n')
-                else:
-                    with open(f'Results/Invalid{self.created}.txt', 'a') as invalid:
-                        invalid.write(line)
-                    w = line.replace('\n', '')
-                    print(Fore.RED + f"{w} Invalid Line")
-            input(
-                f'{Fore.LIGHTCYAN_EX}[Menu] Press ENTER to get back to the menu')
-            system('cls')
-            Main()
-
-    def generaledits(self):
-        system('cls')
-        print(self.t)
-        print(f'{Fore.CYAN}[ComboEditor] Editing...')
-        with open(self.file, 'r', encoding='utf8') as in_file, \
-                open(f'Results/General{self.created}.txt', 'a', encoding='utf8') as out_file:
-            for line in in_file:
-                pw1 = '?'
-                v = 1
-                spilited = line.split(':')
-                if ':' in line:
-                    if v == 1:
-                        t = spilited[1] + str(pw1)
-                    else:
-                        t = spilited[1] + str(pw1)
-                    t = t.replace('\n', '')
-                    email = spilited[1].replace('\n', '')
-                    out_file.write(spilited[0] + ':' + t + '\n')
-                else:
-                    with open(f'Results/Invalid{self.created}.txt', 'a') as invalid:
-                        invalid.write(line)
-                        w = line.replace('\n', '')
-            unedited = open(self.file, 'r', encoding='u8',
-                            errors='ignore').read().split('\n')
-            edited = open(f'Results/General{self.created}.txt', 'r',
-                          encoding='u8', errors='ignore').read().split('\n')
-            print(f'{Fore.CYAN}[ComboEditor] Editing\n')
-            self.general2()
-
-    def general2(self):
-        system('cls')
-        print(self.t)
-        print(f'{Fore.CYAN}[ComboEditor] Editing...')
-        with open(self.file, 'r', encoding='utf8') as in_file, \
-                open(f'Results/General{self.created}.txt', 'a', encoding='utf8') as out_file:
-            for line in in_file:
-                pw1 = '#'
-                v = 1
-                spilited = line.split(':')
-                if ':' in line:
-                    if v == 1:
-                        t = spilited[1] + str(pw1)
-                    else:
-                        t = spilited[1] + str(pw1)
-                    t = t.replace('\n', '')
-                    email = spilited[1].replace('\n', '')
-                    out_file.write(spilited[0] + ':' + t + '\n')
-                else:
-                    with open(f'Results/Invalid{self.created}.txt', 'a') as invalid:
-                        invalid.write(line)
-                        w = line.replace('\n', '')
-            unedited = open(self.file, 'r', encoding='u8',
-                            errors='ignore').read().split('\n')
-            edited = open(f'Results/General{self.created}.txt', 'r',
-                          encoding='u8', errors='ignore').read().split('\n')
-            print(f'{Fore.CYAN}[ComboEditor] Editing\n')
-            self.general3()
-
-    def general3(self):
-        system('cls')
-        print(self.t)
-        print(f'{Fore.CYAN}[ComboEditor] Editing...')
-        with open(self.file, 'r', encoding='utf8') as in_file, \
-                open(f'Results/MinecraftEdits{self.created}.txt', 'a', encoding='utf8') as out_file:
-            for line in in_file:
-                pw1 = '69'
-                v = 1
-                spilited = line.split(':')
-                if ':' in line:
-                    if v == 1:
-                        t = spilited[1] + str(pw1)
-                    else:
-                        t = spilited[1] + str(pw1)
-                    t = t.replace('\n', '')
-                    email = spilited[1].replace('\n', '')
-                    out_file.write(spilited[0] + ':' + t + '\n')
-                else:
-                    with open(f'Results/Invalid{self.created}.txt', 'a') as invalid:
-                        invalid.write(line)
-                        w = line.replace('\n', '')
-            unedited = open(self.file, 'r', encoding='u8',
-                            errors='ignore').read().split('\n')
-            edited = open(f'Results/General{self.created}.txt', 'r',
-                          encoding='u8', errors='ignore').read().split('\n')
-            print(f'{Fore.CYAN}[ComboEditor] Editing\n')
-            self.general4()
-
-    def general4(self):
-        system('cls')
-        print(self.t)
-        print(f'{Fore.CYAN}[ComboEditor] Editing...')
-        with open(self.file, 'r', encoding='utf8') as in_file, \
-                open(f'Results/MinecraftEdits{self.created}.txt', 'a', encoding='utf8') as out_file:
-            for line in in_file:
-                pw1 = '123'
-                v = 1
-                spilited = line.split(':')
-                if ':' in line:
-                    if v == 1:
-                        t = spilited[1] + str(pw1)
-                    else:
-                        t = spilited[1] + str(pw1)
-                    t = t.replace('\n', '')
-                    email = spilited[1].replace('\n', '')
-                    out_file.write(spilited[0] + ':' + t + '\n')
-                else:
-                    with open(f'Results/Invalid{self.created}.txt', 'a') as invalid:
-                        invalid.write(line)
-                        w = line.replace('\n', '')
-            unedited = open(self.file, 'r', encoding='u8',
-                            errors='ignore').read().split('\n')
-            edited = open(f'Results/General{self.created}.txt', 'r',
-                          encoding='u8', errors='ignore').read().split('\n')
-            print(f'{Fore.CYAN}[ComboEditor] Editing\n')
-            self.general5()
-
-    def general5(self):
-        system('cls')
-        print(self.t)
-        print(f'{Fore.CYAN}[ComboEditor] Editing...')
-        with open(self.file, 'r', encoding='utf8') as in_file, \
-                open(f'Results/General{self.created}.txt', 'a', encoding='utf8') as out_file:
-            for line in in_file:
-                pw1 = '1'
-                v = 1
-                spilited = line.split(':')
-                if ':' in line:
-                    if v == 1:
-                        t = spilited[1] + str(pw1)
-                    else:
-                        t = spilited[1] + str(pw1)
-                    t = t.replace('\n', '')
-                    email = spilited[1].replace('\n', '')
-                    out_file.write(spilited[0] + ':' + t + '\n')
-                else:
-                    with open(f'Results/Invalid{self.created}.txt', 'a') as invalid:
-                        invalid.write(line)
-                        w = line.replace('\n', '')
-            unedited = open(self.file, 'r', encoding='u8',
-                            errors='ignore').read().split('\n')
-            edited = open(f'Results/General{self.created}.txt', 'r',
-                          encoding='u8', errors='ignore').read().split('\n')
-            print(f'{Fore.CYAN}[ComboEditor] Editing\n')
-            self.general6()
-
-    def general6(self):
-        system('cls')
-        print(self.t)
-        print(f'{Fore.CYAN}[ComboEditor] Editing...')
-        with open(self.file, 'r', encoding='utf8') as in_file, \
-                open(f'Results/General{self.created}.txt', 'a', encoding='utf8') as out_file:
-            for line in in_file:
-                pw1 = '$'
-                v = 1
-                spilited = line.split(':')
-                if ':' in line:
-                    if v == 1:
-                        t = spilited[1] + str(pw1)
-                    else:
-                        t = spilited[1] + str(pw1)
-                    t = t.replace('\n', '')
-                    email = spilited[1].replace('\n', '')
-                    out_file.write(spilited[0] + ':' + t + '\n')
-                else:
-                    with open(f'Results/Invalid{self.created}.txt', 'a') as invalid:
-                        invalid.write(line)
-                        w = line.replace('\n', '')
-            unedited = open(self.file, 'r', encoding='u8',
-                            errors='ignore').read().split('\n')
-            edited = open(f'Results/General{self.created}.txt', 'r',
-                          encoding='u8', errors='ignore').read().split('\n')
-            print(f'{Fore.CYAN}[ComboEditor] Editing\n')
-            self.general()
-
-    def general(self):
-        system('cls')
-        print(self.t)
-        print(f'{Fore.CYAN}[ComboEditor] Editing...')
-        with open(self.file, 'r', encoding='utf8') as in_file, \
-                open(f'Results/General{self.created}.txt', 'a', encoding='utf8') as out_file:
-            for line in in_file:
-                pw1 = '!'
-                v = 1
-                spilited = line.split(':')
-                if ':' in line:
-                    if v == 1:
-                        t = spilited[1] + str(pw1)
-                    else:
-                        t = spilited[1] + str(pw1)
-                    t = t.replace('\n', '')
-                    email = spilited[1].replace('\n', '')
-                    out_file.write(spilited[0] + ':' + t + '\n')
-                    out_file.write(line)
-                else:
-                    with open(f'Results/Invalid{self.created}.txt', 'a') as invalid:
-                        invalid.write(line)
-                        w = line.replace('\n', '')
-            unedited = open(self.file, 'r', encoding='u8',
-                            errors='ignore').read().split('\n')
-            edited = open(f'Results/General{self.created}.txt', 'r',
-                          encoding='u8', errors='ignore').read().split('\n')
-            print(
-                f'{Fore.CYAN}[ComboEditor] Done Editing, Made {len(edited)} Combos from {len(unedited)} Combos')
-            input(
-                f'{Fore.CYAN}[ComboEditor] Press ENTER to remove duplicates and randomize lines')
-            with open(f'Results/General{self.created}.txt', 'r+', encoding='latin-1') as self.lines1:
-                self.generaldup()
-
-    def generaldup(self):
-        output_file: str = f'Results/General_cleaned{self.unix}.txt'
-        open(output_file, 'w', encoding='latin-1').writelines(
-            set(self.lines1.readlines()))
-        print(
-            f'{Fore.CYAN}[ComboEditor] Removed Duplicates, Saved in {output_file}')
-        afterremove = open(output_file, 'r', encoding='u8',
-                           errors='ignore').read().split('\n')
-        beforeremove = open(
-            f'Results/General{self.created}.txt', 'r', encoding='u8', errors='ignore').read().split('\n')
-        print(
-            f'{Fore.CYAN}[ComboEditor] Before: {len(beforeremove)} After: {len(afterremove)}\n')
-        input(f'{Fore.LIGHTCYAN_EX}[Menu] Press ENTER to get back to the menu')
-        system('cls')
-        Main()
-
-    def password1(self):
-        system('cls')
-        print(self.t)
-        print(f'{Fore.CYAN}[ComboEditor] Editing...')
-        with open(self.file, 'r', encoding='utf8') as in_file, \
-                open(f'Results/MinecraftEdits{self.created}.txt', 'a', encoding='utf8') as out_file:
-            for line in in_file:
-                pw1 = '?'
-                v = 1
-                spilited = line.split(':')
-                if ':' in line:
-                    if v == 1:
-                        t = spilited[1] + str(pw1)
-                    else:
-                        t = spilited[1] + str(pw1)
-                    t = t.replace('\n', '')
-                    email = spilited[1].replace('\n', '')
-                    out_file.write(spilited[0] + ':' + t + '\n')
-                else:
-                    with open(f'Results/Invalid{self.created}.txt', 'a') as invalid:
-                        invalid.write(line)
-                        w = line.replace('\n', '')
-            unedited = open(self.file, 'r', encoding='u8',
-                            errors='ignore').read().split('\n')
-            edited = open(f'Results/MinecraftEdits{self.created}.txt',
-                          'r', encoding='u8', errors='ignore').read().split('\n')
-            print(f'{Fore.CYAN}[ComboEditor] Editing\n')
-            self.password2()
-
-    def password2(self):
-        system('cls')
-        print(self.t)
-        print(f'{Fore.CYAN}[ComboEditor] Editing...')
-        with open(self.file, 'r', encoding='utf8') as in_file, \
-                open(f'Results/MinecraftEdits{self.created}.txt', 'a', encoding='utf8') as out_file:
-            for line in in_file:
-                pw1 = '$'
-                v = 1
-                spilited = line.split(':')
-                if ':' in line:
-                    if v == 1:
-                        t = spilited[1] + str(pw1)
-                    else:
-                        t = spilited[1] + str(pw1)
-                    t = t.replace('\n', '')
-                    email = spilited[1].replace('\n', '')
-                    out_file.write(spilited[0] + ':' + t + '\n')
-                else:
-                    with open(f'Results/Invalid{self.created}.txt', 'a') as invalid:
-                        invalid.write(line)
-                        w = line.replace('\n', '')
-            unedited = open(self.file, 'r', encoding='u8',
-                            errors='ignore').read().split('\n')
-            edited = open(f'Results/MinecraftEdits{self.created}.txt',
-                          'r', encoding='u8', errors='ignore').read().split('\n')
-            print(f'{Fore.CYAN}[ComboEditor] Editing\n')
-            self.password3()
-
-    def password3(self):
-        system('cls')
-        print(self.t)
-        print(f'{Fore.CYAN}[ComboEditor] Editing...')
-        with open(self.file, 'r', encoding='utf8') as in_file, \
-                open(f'Results/MinecraftEdits{self.created}.txt', 'a', encoding='utf8') as out_file:
-            for line in in_file:
-                pw1 = '%'
-                v = 1
-                spilited = line.split(':')
-                if ':' in line:
-                    if v == 1:
-                        t = spilited[1] + str(pw1)
-                    else:
-                        t = spilited[1] + str(pw1)
-                    t = t.replace('\n', '')
-                    email = spilited[1].replace('\n', '')
-                    out_file.write(spilited[0] + ':' + t + '\n')
-                else:
-                    with open(f'Results/Invalid{self.created}.txt', 'a') as invalid:
-                        invalid.write(line)
-                        w = line.replace('\n', '')
-            unedited = open(self.file, 'r', encoding='u8',
-                            errors='ignore').read().split('\n')
-            edited = open(f'Results/MinecraftEdits{self.created}.txt',
-                          'r', encoding='u8', errors='ignore').read().split('\n')
-            print(f'{Fore.CYAN}[ComboEditor] Editing\n')
-            self.password4()
-
-    def password4(self):
-        system('cls')
-        print(self.t)
-        print(f'{Fore.CYAN}[ComboEditor] Editing...')
-        with open(self.file, 'r', encoding='utf8') as in_file, \
-                open(f'Results/MinecraftEdits{self.created}.txt', 'a', encoding='utf8') as out_file:
-            for line in in_file:
-                pw1 = '123'
-                v = 1
-                spilited = line.split(':')
-                if ':' in line:
-                    if v == 1:
-                        t = spilited[1] + str(pw1)
-                    else:
-                        t = spilited[1] + str(pw1)
-                    t = t.replace('\n', '')
-                    email = spilited[1].replace('\n', '')
-                    out_file.write(spilited[0] + ':' + t + '\n')
-                else:
-                    with open(f'Results/Invalid{self.created}.txt', 'a') as invalid:
-                        invalid.write(line)
-                        w = line.replace('\n', '')
-            unedited = open(self.file, 'r', encoding='u8',
-                            errors='ignore').read().split('\n')
-            edited = open(f'Results/MinecraftEdits{self.created}.txt',
-                          'r', encoding='u8', errors='ignore').read().split('\n')
-            print(f'{Fore.CYAN}[ComboEditor] Editing\n')
-            self.password5()
-
-    def password5(self):
-        system('cls')
-        print(self.t)
-        print(f'{Fore.CYAN}[ComboEditor] Editing...')
-        with open(self.file, 'r', encoding='utf8') as in_file, \
-                open(f'Results/MinecraftEdits{self.created}.txt', 'a', encoding='utf8') as out_file:
-            for line in in_file:
-                pw1 = '1'
-                v = 1
-                spilited = line.split(':')
-                if ':' in line:
-                    if v == 1:
-                        t = spilited[1] + str(pw1)
-                    else:
-                        t = spilited[1] + str(pw1)
-                    t = t.replace('\n', '')
-                    email = spilited[1].replace('\n', '')
-                    out_file.write(spilited[0] + ':' + t + '\n')
-                else:
-                    with open(f'Results/Invalid{self.created}.txt', 'a') as invalid:
-                        invalid.write(line)
-                        w = line.replace('\n', '')
-            unedited = open(self.file, 'r', encoding='u8',
-                            errors='ignore').read().split('\n')
-            edited = open(f'Results/MinecraftEdits{self.created}.txt',
-                          'r', encoding='u8', errors='ignore').read().split('\n')
-            print(f'{Fore.CYAN}[ComboEditor] Editing\n')
-            self.password()
-
-    def password(self):
-        system('cls')
-        print(self.t)
-        print(f'{Fore.CYAN}[ComboEditor] Editing...')
-        with open(self.file, 'r', encoding='utf8') as in_file, \
-                open(f'Results/MinecraftEdits{self.created}.txt', 'a', encoding='utf8') as out_file:
-            for line in in_file:
-                pw1 = '!'
-                v = 1
-                spilited = line.split(':')
-                if ':' in line:
-                    if v == 1:
-                        t = spilited[1] + str(pw1)
-                    else:
-                        t = spilited[1] + str(pw1)
-                    t = t.replace('\n', '')
-                    email = spilited[1].replace('\n', '')
-                    out_file.write(spilited[0] + ':' + t + '\n')
-                    out_file.write(line)
-                else:
-                    with open(f'Results/Invalid{self.created}.txt', 'a') as invalid:
-                        invalid.write(line)
-                        w = line.replace('\n', '')
-            unedited = open(self.file, 'r', encoding='u8',
-                            errors='ignore').read().split('\n')
-            edited = open(f'Results/MinecraftEdits{self.created}.txt',
-                          'r', encoding='u8', errors='ignore').read().split('\n')
-            print(
-                f'{Fore.CYAN}[ComboEditor] Done Editing, Made {len(edited)} Combos from {len(unedited)} Combos')
-            input(
-                f'{Fore.CYAN}[ComboEditor] Press ENTER to remove duplicates and randomize lines')
-            with open(f'Results/MinecraftEdits{self.created}.txt', 'r+', encoding='latin-1') as self.lines1:
-                self.sort1()
-
-    def sort1(self):
-        output_file: str = f'Results/MinecraftEditsCleaned{self.unix}.txt'
-        open(output_file, 'w', encoding='latin-1').writelines(
-            set(self.lines1.readlines()))
-        print(
-            f'{Fore.CYAN}[ComboEditor] Removed Duplicates, Saved in {output_file}')
-        afterremove = open(output_file, 'r', encoding='u8',
-                           errors='ignore').read().split('\n')
-        beforeremove = open(
-            f'Results/MinecraftEdits{self.created}.txt', 'r', encoding='u8', errors='ignore').read().split('\n')
-        print(
-            f'{Fore.CYAN}[ComboEditor] Before: {len(beforeremove)} After: {len(afterremove)}\n')
-        input(f'{Fore.LIGHTCYAN_EX}[Menu] Press ENTER to get back to the menu')
-        system('cls')
-        Main()
 
 
     def proxyupdateder(self):
