@@ -179,7 +179,7 @@ class Main:
         print_slowly('Checking for updates .....', 0.03)
         while True:
             try:
-                r = requests.get('https://raw.githubusercontent.com/DZZHACKS/Criminal-Fn-checker/refs/heads/main/version.txt?token=GHSAT0AAAAAAC6ABKCC6SAU56EJJCDWK7XQZ4YM6QA')
+                r = requests.get('https://raw.githubusercontent.com/DZZHACKS/Criminal-Fn-checker/refs/heads/main/version.txt')
                 ver = r.text.strip()
                 break
             except:
@@ -196,7 +196,7 @@ class Main:
             print_slowly(f'Downloading version {ver}', 0.01)
             while True:
                 try:
-                    r = requests.get('https://raw.githubusercontent.com/DZZHACKS/Criminal-Fn-checker/refs/heads/main/criminal.py?token=GHSAT0AAAAAAC6ABKCCLNXV4JL5Y64NANZMZ4YNBMQ', timeout=10)
+                    r = requests.get('https://raw.githubusercontent.com/DZZHACKS/Criminal-Fn-checker/refs/heads/main/criminal.py', timeout=10)
                     with open(f'criminal{ver}.py', 'w', encoding='utf8') as file:
                         file.write(r.text)
                     break
