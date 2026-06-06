@@ -1,0 +1,10 @@
+{
+  "name": "criminal-checker-web-preview",
+  "version": "1.0.0",
+  "description": "Standalone web preview of the Criminal Checker dashboard UI (visual only, no checking logic).",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "MIT"
+}
