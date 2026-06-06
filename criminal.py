@@ -209,10 +209,15 @@ class Main:
         windll.kernel32.SetConsoleTitleW(
                 f'criminal | v.free | t.me/CHEZCRIMINALL')
         print(self.t)
+        M = Fore.LIGHTMAGENTA_EX
+        W = Fore.WHITE
+        R = Fore.RESET
         print(f'''
-        {Fore.WHITE}[{Fore.LIGHTMAGENTA_EX}1{Fore.WHITE}] Fortnite via Xbox {Fore.WHITE}[{Fore.LIGHTMAGENTA_EX}Full Capture using Microsoft authentication{Fore.WHITE}]
+        {M}╔══════════════════════════════ MENU ══════════════════════════════╗
+        {M}║  {W}[{M}1{W}] Fortnite via Xbox  {M}— {W}Full Capture (Microsoft authentication) {M} ║
+        {M}╚══════════════════════════════════════════════════════════════════╝{R}
     ''')
-        mode = input(f'{Fore.LIGHTMAGENTA_EX}                > ')
+        mode = input(f'{M}                > ')
 
         if mode == "1":
             if mode == "2":
@@ -257,15 +262,23 @@ class Main:
             print(self.t)
             print("")
 
-            print(f'{Fore.LIGHTMAGENTA_EX}Here is your current config:\n')
-
-            print(f'{Fore.LIGHTMAGENTA_EX}-- Proxy: {Checker.Proxy.proxy}')
+            M = Fore.LIGHTMAGENTA_EX
+            W = Fore.LIGHTWHITE_EX
+            R = Fore.RESET
+            def cfg_row(label, value):
+                line = f' {label:<10}: {value}'
+                pad = 44 - len(line)
+                pad = 0 if pad < 0 else pad
+                return f'{M}│{W}{line}{" " * pad}{M}│{R}'
+            print(f'{M}┌─ CURRENT CONFIG {"─" * 27}┐{R}')
+            print(cfg_row('Proxy', Checker.Proxy.proxy))
             if Checker.Proxy.proxy == True:
-                print(f'{Fore.LIGHTMAGENTA_EX}-- Proxy Type: {Checker.Proxy.type}')
-            print(f'{Fore.LIGHTMAGENTA_EX}-- Threads: {Checker.threads}')
-            print(f'{Fore.LIGHTMAGENTA_EX}-- Timeout: {Checker.timeout}')
+                print(cfg_row('Proxy Type', Checker.Proxy.type))
+            print(cfg_row('Threads', Checker.threads))
+            print(cfg_row('Timeout', Checker.timeout))
+            print(f'{M}└{"─" * 44}┘{R}')
             print(
-                f'{Fore.LIGHTMAGENTA_EX}-- Are you happy with this config ?\n\n-- (y to start checking n to edit)')
+                f'\n{M}-- Are you happy with this config? {W}(y {M}to start checking, {W}n {M}to edit){R}')
             edit = input('> ')
             if 'n' in edit:
                 system('cls')
@@ -2004,7 +2017,14 @@ class Main:
 '''
                     system('cls')
                     print(logo_colored)
-                    print(f'                                                  {Fore.LIGHTMAGENTA_EX}          [{Counter.checkedpercent:.2f}%]\n\n')
+                    pct = Counter.checkedpercent
+                    barw = 42
+                    fill = int(barw * pct / 100)
+                    fill = 0 if fill < 0 else (barw if fill > barw else fill)
+                    barr = '█' * fill + '░' * (barw - fill)
+                    print(
+                        f'            {Fore.LIGHTMAGENTA_EX}Progress {Fore.WHITE}[{Fore.LIGHTMAGENTA_EX}{barr}{Fore.WHITE}] '
+                        f'{Fore.LIGHTMAGENTA_EX}{pct:.2f}%   {Fore.WHITE}Elapsed {Fore.LIGHTMAGENTA_EX}{self.Timeused()}{Fore.RESET}\n')
                     zeroskins = 0
                     oneplus = 0
                     tenplus = 0
@@ -2070,7 +2090,74 @@ class Main:
 
                         )
 
-                    print(result)
+                    M = Fore.LIGHTMAGENTA_EX
+                    W = Fore.LIGHTWHITE_EX
+                    R = Fore.RESET
+                    plus  = f'{Fore.WHITE}[{Fore.LIGHTGREEN_EX}+{Fore.WHITE}]{W}'
+                    minus = f'{Fore.WHITE}[{Fore.LIGHTRED_EX}-{Fore.WHITE}]{W}'
+                    slash = f'{Fore.WHITE}[{Fore.LIGHTYELLOW_EX}/{Fore.WHITE}]{W}'
+                    dotg  = f'{Fore.WHITE}[{Fore.GREEN}»{Fore.WHITE}]{W}'
+                    dotc  = f'{Fore.WHITE}[{Fore.CYAN}»{Fore.WHITE}]{W}'
+                    dotb  = f'{Fore.WHITE}[{Fore.BLUE}»{Fore.WHITE}]{W}'
+                    dotr  = f'{Fore.WHITE}[{Fore.RED}»{Fore.WHITE}]{W}'
+                    dotp  = f'{Fore.WHITE}[{Fore.MAGENTA}»{Fore.WHITE}]{W}'
+                    doty  = f'{Fore.WHITE}[{Fore.YELLOW}»{Fore.WHITE}]{W}'
+                    dotk  = f'{Fore.WHITE}[{Fore.LIGHTBLACK_EX}»{Fore.WHITE}]{W}'
+                    dotm  = f'{Fore.WHITE}[{M}»{Fore.WHITE}]{W}'
+
+                    INNER = 20
+
+                    def panel(title, rows):
+                        head = f'─ {title} '
+                        lines = [f'{M}┌{head}{"─" * (INNER - len(head))}┐{R}']
+                        for sym, label, value in rows:
+                            cell = f'{label:<9}{str(value):<5}'
+                            pad = INNER - (1 + 3 + 1 + len(cell))
+                            pad = 0 if pad < 0 else pad
+                            lines.append(f'{M}│{R} {sym} {cell}{" " * pad}{M}│{R}')
+                        return lines
+
+                    checker_rows = [
+                        (plus,  'Hits',    Counter.hits + Counter.fnban),
+                        (minus, 'Fails',   bad),
+                        (slash, 'CPM',     Counter.cpm),
+                        (dotm,  'Retries', Counter.retries),
+                    ]
+                    stats_rows = [
+                        (dotg, 'NFA',      nfa),
+                        (dotc, 'FA',       maybefa),
+                        (dotm, 'STW',      Counter.stw),
+                        (dotr, 'Rares',    exclusivee),
+                        (dotp, 'OGs',      Counter.og),
+                        (dotb, 'Headless', Counter.headless),
+                        (doty, 'Epic 2FA', Counter.epic2fa),
+                        (dotk, 'Banned',   Counter.fnban),
+                    ]
+                    skins_rows = [
+                        (dotm, '300+', threehundredplus),
+                        (dotm, '200+', twohundredplus),
+                        (dotm, '100+', onehundredplus),
+                        (dotm, '50+',  fiftyplus),
+                        (dotm, '10+',  tenplus),
+                        (dotm, '1+',   oneplus),
+                        (dotm, '0',    zeroskins),
+                    ]
+                    p1 = panel('CHECKER', checker_rows)
+                    p2 = panel('STATS',   stats_rows)
+                    p3 = panel('SKINS',   skins_rows)
+                    height = max(len(p1), len(p2), len(p3))
+                    empty = f'{M}│{R}{" " * INNER}{M}│{R}'
+                    bottom = f'{M}└{"─" * INNER}┘{R}'
+                    for p in (p1, p2, p3):
+                        while len(p) < height:
+                            p.append(empty)
+                        p.append(bottom)
+                    pad_left = ' ' * 12
+                    for a, b, c in zip(p1, p2, p3):
+                        print(f'{pad_left}{a}  {b}  {c}')
+                    print(
+                        f'\n{pad_left}{M}Telegram: {W}https://t.me/CHEZCRIMINALL'
+                        f'    {M}Contact: {W}https://t.me/crx140{R}')
             except Exception as e:
                 print(f"{Fore.RED}{e}")
     def Timeused(self):
